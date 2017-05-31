@@ -34,6 +34,7 @@ int main()
 	dblList.IsEmpty();
 	
 	dblList.DeleteFirst();
+	dblList.DeleteLast();
 
     return 0;
 }

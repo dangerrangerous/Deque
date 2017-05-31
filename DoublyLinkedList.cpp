@@ -128,6 +128,9 @@ void DoublyLinkedList::DeleteFirst()
 	
 	if (firstNode->next == nullptr)
 	{
+		// I read online that you're supposed to delete and then
+		// set pointer to null, but when debugging nulling first seems
+		// to be much cleaner
 		firstNode = nullptr;
 		lastNode = nullptr;
 		delete firstNode;
@@ -137,9 +140,33 @@ void DoublyLinkedList::DeleteFirst()
 	{
 		firstNode->next->previous = temp;
 		firstNode = firstNode->next;
+		firstNode->previous = nullptr;
 		temp = nullptr;
 		delete temp;
 	}
 
 	listLength--;
 } // end DeleteFirst()
+
+void DoublyLinkedList::DeleteLast()
+{
+	Node* temp = lastNode;
+
+	if (lastNode->previous == nullptr)
+	{
+		firstNode = nullptr;
+		lastNode = nullptr;
+		delete firstNode;
+		delete lastNode;
+	}
+	else
+	{
+		lastNode->previous->next = temp;
+		lastNode = lastNode->previous;
+		lastNode->next = nullptr;
+		temp = nullptr;
+		delete temp;
+	}
+
+	listLength--;
+} // end DeleteLast()
