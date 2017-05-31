@@ -175,8 +175,32 @@ void DoublyLinkedList::DeleteLast()
 
 void DoublyLinkedList::DeleteNode(int inValue)
 {
+	Node* temp = Find(inValue);
 
-}
+	if (temp == firstNode)
+	{
+		temp = firstNode->next;
+		firstNode = temp;
+		temp = nullptr;
+		firstNode->previous = nullptr;
+		delete temp;
+	}
+	else if (temp == lastNode)
+	{
+		temp = lastNode->previous;
+		lastNode = temp;
+		temp = nullptr;
+		lastNode->next = nullptr;
+		delete temp;
+	}
+	else
+	{
+		temp->previous->next = temp->next;
+		temp->next->previous = temp->previous;
+		temp = nullptr;
+		delete temp;
+	}
+} // end DeleteNode
 
 Node* DoublyLinkedList::Find(int searchValue)
 {
@@ -190,4 +214,5 @@ Node* DoublyLinkedList::Find(int searchValue)
 		}
 		current = current->next;
 	}
-}
+} // end Find()
+

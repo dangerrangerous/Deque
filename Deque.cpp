@@ -37,6 +37,9 @@ int main()
 //	dblList.DeleteLast();
 
 	dblList.Find(3);
+//	dblList.DeleteNode(1);
+//	dblList.DeleteNode(4);
+	dblList.DeleteNode(2);
 
     return 0;
 }
