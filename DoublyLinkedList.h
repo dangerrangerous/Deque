@@ -14,7 +14,8 @@ struct Node
 public:
 	// Constructors
 	Node(void);
-	Node(int, Node*);
+	Node(int);
+	// Node(int, Node*);
 
 	// Destructor
 	~Node(void);
@@ -47,7 +48,9 @@ public:
 	int DoublyLinkedList::NodeCount(DoublyLinkedList* inList);
 
 private:
+	// probably want a head pointer
+
 	Node* firstNode;
-	Node* nextNode;
+	// Node* nextNode;
 	Node* lastNode;
 };

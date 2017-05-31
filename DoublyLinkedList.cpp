@@ -14,11 +14,20 @@ Node::Node(void)
 }
 
 // Constructor
+/*
 Node::Node(int inElement, Node* nodePtr)
 {
 	data = inElement;
-	previous = nullptr;
+	// 
+	previous = previous->next;
 	next = nodePtr;
+}
+*/
+Node::Node(int inValue)
+{
+	data = inValue;
+	previous = nullptr;
+	next = nullptr;
 }
 
 // Destructor
@@ -63,5 +72,25 @@ void DoublyLinkedList::InitializeList()
 
 void DoublyLinkedList::InsertFirst(int inValue)
 {
-	Node* newNode = new Node(inValue, firstNode);
+	Node* newNode = new Node(inValue);
+	Node* tempNode;
+
+		
+	
+	if (firstNode != nullptr)
+	{
+		firstNode->previous = newNode;
+		newNode->next = firstNode;
+		firstNode = newNode;
+	}
+
+	if (firstNode == nullptr)
+	{
+		firstNode = newNode;
+	}
+
+	if (lastNode == nullptr)
+	{
+		lastNode = firstNode;
+	}
 }

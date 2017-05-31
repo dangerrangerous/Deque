@@ -2,7 +2,7 @@
 //
 
 #include "stdafx.h"
-
+#include "DoublyLinkedList.h"
 /*
 1) EnqueueFront 
 2) DequeFront 
@@ -19,6 +19,14 @@ Use an instance of the DoublyLinkedList class as the fundamental structure to ho
 
 int main()
 {
+	DoublyLinkedList dblList;
+
+	dblList.InitializeList();
+
+	dblList.InsertFirst(3);
+	dblList.InsertFirst(2);
+	dblList.InsertFirst(1);
+
     return 0;
 }
 
