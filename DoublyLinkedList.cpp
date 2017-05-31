@@ -54,6 +54,7 @@ void DoublyLinkedList::DestroyList()
 	{
 		temp = firstNode;
 		firstNode = firstNode->next;
+		temp = nullptr;
 		delete temp;
 	}
 
@@ -90,6 +91,8 @@ void DoublyLinkedList::InsertFirst(int inValue)
 	{
 		lastNode = firstNode;
 	}
+
+	listLength++;
 } // end InsertFirst()
 
 void DoublyLinkedList::InsertLast(int inValue)
@@ -106,4 +109,37 @@ void DoublyLinkedList::InsertLast(int inValue)
 		newNode->previous = lastNode;
 		lastNode = newNode;
 	}
+
+	listLength++;
 }
+
+bool DoublyLinkedList::IsEmpty()
+{
+	// super naive, consider improving this later
+	if (firstNode != nullptr)
+		return false;
+	else
+		return true;
+}
+
+void DoublyLinkedList::DeleteFirst()
+{
+	Node* temp = firstNode;
+	
+	if (firstNode->next == nullptr)
+	{
+		firstNode = nullptr;
+		lastNode = nullptr;
+		delete firstNode;
+		delete lastNode;
+	}
+	else
+	{
+		firstNode->next->previous = temp;
+		firstNode = firstNode->next;
+		temp = nullptr;
+		delete temp;
+	}
+
+	listLength--;
+} // end DeleteFirst()

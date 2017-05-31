@@ -23,11 +23,17 @@ int main()
 
 	dblList.InitializeList();
 
+	dblList.IsEmpty();
+
 	dblList.InsertFirst(3);
 	dblList.InsertFirst(2);
 	dblList.InsertFirst(1);
 
 	dblList.InsertLast(4);
+
+	dblList.IsEmpty();
+	
+	dblList.DeleteFirst();
 
     return 0;
 }

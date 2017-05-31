@@ -53,4 +53,5 @@ private:
 	Node* firstNode;
 	// Node* nextNode;
 	Node* lastNode;
+	int listLength;
 };
