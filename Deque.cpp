@@ -33,8 +33,10 @@ int main()
 
 	dblList.IsEmpty();
 	
-	dblList.DeleteFirst();
-	dblList.DeleteLast();
+//	dblList.DeleteFirst();
+//	dblList.DeleteLast();
+
+	dblList.Find(3);
 
     return 0;
 }

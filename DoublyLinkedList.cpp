@@ -2,6 +2,7 @@
 
 #include "stdafx.h"
 #include "DoublyLinkedList.h"
+#include <iostream>
 
 using namespace std;
 
@@ -128,9 +129,10 @@ void DoublyLinkedList::DeleteFirst()
 	
 	if (firstNode->next == nullptr)
 	{
-		// I read online that you're supposed to delete and then
+		// I read online (stackoverflow) that you're supposed to delete then
 		// set pointer to null, but when debugging nulling first seems
-		// to be much cleaner
+		// to be much cleaner the node's previous will point to nullptr
+		// instead of a large negative value.
 		firstNode = nullptr;
 		lastNode = nullptr;
 		delete firstNode;
@@ -170,3 +172,22 @@ void DoublyLinkedList::DeleteLast()
 
 	listLength--;
 } // end DeleteLast()
+
+void DoublyLinkedList::DeleteNode(int inValue)
+{
+
+}
+
+Node* DoublyLinkedList::Find(int searchValue)
+{
+	Node* current = firstNode;
+	while (current != nullptr)
+	{
+		if (current->data == searchValue)
+		{
+			cout << "Found node with value " << searchValue << endl;
+			return current;
+		}
+		current = current->next;
+	}
+}

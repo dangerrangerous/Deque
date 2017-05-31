@@ -42,7 +42,9 @@ public:
 	
 	void DoublyLinkedList::DeleteFirst();
 	void DoublyLinkedList::DeleteLast();
-	void DoublyLinkedList::DeleteNode();
+	void DoublyLinkedList::DeleteNode(int);
+
+	Node* DoublyLinkedList::Find(int);
 
 	void DoublyLinkedList::InsertNode(Node* inNode);
 	int DoublyLinkedList::NodeCount(DoublyLinkedList* inList);
