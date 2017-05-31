@@ -27,6 +27,8 @@ int main()
 	dblList.InsertFirst(2);
 	dblList.InsertFirst(1);
 
+	dblList.InsertLast(4);
+
     return 0;
 }
 

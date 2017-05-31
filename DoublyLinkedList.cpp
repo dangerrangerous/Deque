@@ -73,9 +73,6 @@ void DoublyLinkedList::InitializeList()
 void DoublyLinkedList::InsertFirst(int inValue)
 {
 	Node* newNode = new Node(inValue);
-	Node* tempNode;
-
-		
 	
 	if (firstNode != nullptr)
 	{
@@ -92,5 +89,21 @@ void DoublyLinkedList::InsertFirst(int inValue)
 	if (lastNode == nullptr)
 	{
 		lastNode = firstNode;
+	}
+} // end InsertFirst()
+
+void DoublyLinkedList::InsertLast(int inValue)
+{
+	Node* newNode = new Node(inValue);
+
+	if (lastNode == nullptr)
+	{
+		lastNode = newNode;
+	}
+	else
+	{
+		lastNode->next = newNode;
+		newNode->previous = lastNode;
+		lastNode = newNode;
 	}
 }
