@@ -5,8 +5,21 @@
 
 using namespace std;
 
+// class DoublyLinkedList;
+
 struct Node
 {
+	friend class DoublyLinkedList;
+
+public:
+	// Constructors
+	Node(void);
+	Node(int, Node*);
+
+	// Destructor
+	~Node(void);
+
+private:
 	int data;
 	Node* previous;
 	Node* next;
@@ -28,11 +41,13 @@ public:
 	
 	void DoublyLinkedList::DeleteFirst();
 	void DoublyLinkedList::DeleteLast();
+	void DoublyLinkedList::DeleteNode();
 
 	void DoublyLinkedList::InsertNode(Node* inNode);
 	int DoublyLinkedList::NodeCount(DoublyLinkedList* inList);
 
 private:
-	Node* first;
-	Node* last;
+	Node* firstNode;
+	Node* nextNode;
+	Node* lastNode;
 };
