@@ -254,4 +254,20 @@ void DoublyLinkedList::InsertNodeBefore(int node, int inValue)
 		temp->previous = newNode;
 	}
 	listLength++;
+} // end InsertNodeBefore()
+
+int DoublyLinkedList::NodeCount()
+{
+	// naive
+	return listLength;
+	// int nodeCount = 0;
+	/*
+	Node* temp = firstNode;
+	while (temp != nullptr)
+	{
+		temp = temp->next;
+		nodeCount++;
+	}
+	return nodeCount;
+	*/
 }
