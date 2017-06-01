@@ -258,6 +258,7 @@ void DoublyLinkedList::InsertNodeBefore(int node, int inValue)
 
 int DoublyLinkedList::NodeCount()
 {
+	cout << "Node count: " << listLength << endl;
 	// naive
 	return listLength;
 	// int nodeCount = 0;
@@ -270,4 +271,5 @@ int DoublyLinkedList::NodeCount()
 	}
 	return nodeCount;
 	*/
-}
+} // end NodeCount()
+

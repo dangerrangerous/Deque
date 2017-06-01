@@ -42,6 +42,7 @@ int main()
 //	dblList.DeleteNode(2);
 	dblList.InsertNodeAfter(3, 7);
 	dblList.InsertNodeBefore(7, 6);
+	dblList.NodeCount();
 
     return 0;
 }

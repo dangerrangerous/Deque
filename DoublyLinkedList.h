@@ -48,7 +48,7 @@ public:
 
 	void DoublyLinkedList::InsertNodeAfter(int node, int inValue);
 	void DoublyLinkedList::InsertNodeBefore(int node, int inValue);
-	int DoublyLinkedList::NodeCount(DoublyLinkedList* inList);
+	int DoublyLinkedList::NodeCount();
 
 private:
 	// probably want a head pointer
