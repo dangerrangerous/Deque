@@ -1,8 +1,9 @@
 // Deque.cpp : Defines the entry point for the console application.
-//
+// Brian Keppinger
 
 #include "stdafx.h"
 #include "DoublyLinkedList.h"
+#include "Deque.h"
 /*
 1) EnqueueFront 
 2) DequeFront 
@@ -16,6 +17,47 @@
 Use an instance of the DoublyLinkedList class as the fundamental structure to hold Deque values.
 
 */
+using namespace std;
+
+// Default constructor
+Deque::Deque(void)
+{
+	dequeElements.InitializeList();
+}
+
+// Default destructor
+Deque::~Deque(void)
+{
+	dequeElements.InitializeList();
+}
+
+void Deque::InitializeDeque()
+{
+	dequeElements.InitializeList();
+}
+
+void Deque::EnqueueFront(int data)
+{
+	dequeElements.InsertFirst(data);
+}
+
+Node* Deque::DequeueFront()
+{
+	Node* temp = dequeElements.GetFirst();
+	dequeElements.DeleteFirst();
+	return temp;
+}
+
+void Deque::EnqueueBack(int data)
+{
+	dequeElements.InsertLast(data);
+}
+
+
+
+
+
+
 
 
 int main()
