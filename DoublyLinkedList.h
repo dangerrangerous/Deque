@@ -46,7 +46,8 @@ public:
 
 	Node* DoublyLinkedList::Find(int);
 
-	void DoublyLinkedList::InsertNode(Node* inNode);
+	void DoublyLinkedList::InsertNodeAfter(int node, int inValue);
+	void DoublyLinkedList::InsertNodeBefore(int node, int inValue);
 	int DoublyLinkedList::NodeCount(DoublyLinkedList* inList);
 
 private:

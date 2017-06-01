@@ -200,7 +200,7 @@ void DoublyLinkedList::DeleteNode(int inValue)
 		temp = nullptr;
 		delete temp;
 	}
-} // end DeleteNode
+} // end DeleteNode()
 
 Node* DoublyLinkedList::Find(int searchValue)
 {
@@ -214,5 +214,44 @@ Node* DoublyLinkedList::Find(int searchValue)
 		}
 		current = current->next;
 	}
+	cout << "Value not found." << endl;
+	return 0;
 } // end Find()
 
+void DoublyLinkedList::InsertNodeAfter(int node, int inValue)
+{
+	Node* temp = Find(node);
+	Node* newNode = new Node(inValue);
+
+	if (temp == lastNode)
+	{
+		InsertLast(inValue);
+	}
+	else
+	{
+		newNode->next = temp->next;
+		temp->next->previous = newNode;
+		newNode->previous = temp;
+		temp->next = newNode;
+	}
+	listLength++;
+} // end InsertNodeAfter()
+
+void DoublyLinkedList::InsertNodeBefore(int node, int inValue)
+{
+	Node* temp = Find(node);
+	Node* newNode = new Node(inValue);
+
+	if (temp == firstNode)
+	{
+		InsertFirst(inValue);
+	}
+	else
+	{
+		newNode->previous = temp->previous;
+		temp->previous->next = newNode;
+		newNode->next = temp;
+		temp->previous = newNode;
+	}
+	listLength++;
+}
