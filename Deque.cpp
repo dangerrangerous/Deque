@@ -53,39 +53,42 @@ void Deque::EnqueueBack(int data)
 	dequeElements.InsertLast(data);
 }
 
+Node* Deque::DequeueBack()
+{
+	Node* temp = dequeElements.GetLast();
+	dequeElements.DeleteLast();
+	return temp;
+}
 
+Node* Deque::PeekFront()
+{
+	return dequeElements.GetFirst();
+}
 
+Node* Deque::PeekBack()
+{
+	return dequeElements.GetLast();
+}
 
-
-
-
+void Deque::Print()
+{
+	dequeElements.Display();
+}
 
 int main()
 {
-	DoublyLinkedList dblList;
+	Deque deque;
+	deque.InitializeDeque();
+	deque.EnqueueFront(42);
+	deque.EnqueueBack(24);
+	deque.DequeueFront();
+	deque.DequeueBack();
 
-	dblList.InitializeList();
-
-	dblList.IsEmpty();
-
-	dblList.InsertFirst(3);
-	dblList.InsertFirst(2);
-	dblList.InsertFirst(1);
-
-	dblList.InsertLast(4);
-
-	dblList.IsEmpty();
-	
-//	dblList.DeleteFirst();
-//	dblList.DeleteLast();
-
-	dblList.Find(3);
-//	dblList.DeleteNode(1);
-//	dblList.DeleteNode(4);
-//	dblList.DeleteNode(2);
-	dblList.InsertNodeAfter(3, 7);
-	dblList.InsertNodeBefore(7, 6);
-	dblList.NodeCount();
+	for (int i = 0; i < 10; i++)
+	{
+		deque.EnqueueFront(i);
+	}
+	deque.Print();
 
     return 0;
 }

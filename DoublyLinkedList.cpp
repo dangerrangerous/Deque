@@ -67,6 +67,11 @@ Node* DoublyLinkedList::GetFirst()
 	return firstNode;
 } // end GetFirst()
 
+Node* DoublyLinkedList::GetLast()
+{
+	return lastNode;
+} // end GetLast()
+
 void DoublyLinkedList::InitializeList()
 {
 	DestroyList();
@@ -273,3 +278,21 @@ int DoublyLinkedList::NodeCount()
 	*/
 } // end NodeCount()
 
+void DoublyLinkedList::Display()
+{
+	// TODO: wrap this in b_IsEmpty()
+	if (firstNode == nullptr)
+	{
+		cout << "the list is empty.";
+		return;
+	}
+
+	Node* current = firstNode;
+	// Because how could our pointer ever point to something that
+	// doesn't exist eh?
+	while (current->next != nullptr)
+	{
+		cout << current->data << " ";
+		current = current->next;
+	}
+}

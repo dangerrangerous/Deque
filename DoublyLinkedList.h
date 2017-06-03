@@ -34,6 +34,7 @@ public:
 
 	void DoublyLinkedList::DestroyList();
 	Node* GetFirst();
+	Node* GetLast();
 	void DoublyLinkedList::InitializeList();
 	
 	void DoublyLinkedList::InsertFirst(int);
@@ -44,6 +45,7 @@ public:
 	void DoublyLinkedList::DeleteLast();
 	void DoublyLinkedList::DeleteNode(int);
 
+	void DoublyLinkedList::Display();
 	Node* DoublyLinkedList::Find(int);
 
 	void DoublyLinkedList::InsertNodeAfter(int node, int inValue);
