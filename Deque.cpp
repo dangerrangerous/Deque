@@ -90,6 +90,9 @@ int main()
 	}
 	deque.Print();
 
+	// data is private
+	// deque.EnqueueFront(deque.PeekBack()->data);
+
     return 0;
 }
 
