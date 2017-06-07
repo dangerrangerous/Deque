@@ -295,4 +295,6 @@ void DoublyLinkedList::Display()
 		cout << current->data << " ";
 		current = current->next;
 	}
+	// Don't forget the last element!
+	cout << lastNode->data;
 }
