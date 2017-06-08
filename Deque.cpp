@@ -4,6 +4,7 @@
 #include "stdafx.h"
 #include "DoublyLinkedList.h"
 #include "Deque.h"
+#include "Menu.h"
 /*
 1) EnqueueFront 
 2) DequeFront 
@@ -78,20 +79,16 @@ void Deque::Print()
 int main()
 {
 	Deque deque;
-	deque.InitializeDeque();
-	deque.EnqueueFront(42);
-	deque.EnqueueBack(24);
-	deque.DequeueFront();
-	deque.DequeueBack();
+	Menu menu;
 
-	for (int i = 0; i < 10; i++)
+	// User menu do while loop
+	do
 	{
-		deque.EnqueueFront(i);
-	}
-	deque.Print();
+		menu.Display();
+		menu.QueryUser();
+		menu.ProcessCommand(deque);
+	} while (menu.Continue());
 
-	// data is private
-	// deque.EnqueueFront(deque.PeekBack()->data);
 
     return 0;
 }

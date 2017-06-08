@@ -19,9 +19,9 @@ public:
 
 	// Destructor
 	~Node(void);
+	int data;
 
 private:
-	int data;
 	Node* previous;
 	Node* next;
 };
