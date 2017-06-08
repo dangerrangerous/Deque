@@ -5,6 +5,9 @@
 #include "DoublyLinkedList.h"
 #include "Deque.h"
 #include "Menu.h"
+#include <iostream>
+
+using namespace std;
 /*
 1) EnqueueFront 
 2) DequeFront 
@@ -45,7 +48,12 @@ void Deque::EnqueueFront(int data)
 Node* Deque::DequeueFront()
 {
 	Node* temp = dequeElements.GetFirst();
-	dequeElements.DeleteFirst();
+
+	if (dequeElements.IsEmpty() == false)
+	{
+		dequeElements.DeleteFirst();
+	}
+	
 	return temp;
 }
 
@@ -57,7 +65,11 @@ void Deque::EnqueueBack(int data)
 Node* Deque::DequeueBack()
 {
 	Node* temp = dequeElements.GetLast();
-	dequeElements.DeleteLast();
+	if (dequeElements.IsEmpty() == false)
+	{
+		dequeElements.DeleteLast();
+	}
+
 	return temp;
 }
 
@@ -74,6 +86,11 @@ Node* Deque::PeekBack()
 void Deque::Print()
 {
 	dequeElements.Display();
+}
+
+bool Deque::b_IsEmpty()
+{
+	return dequeElements.IsEmpty();
 }
 
 int main()

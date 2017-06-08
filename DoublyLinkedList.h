@@ -52,11 +52,12 @@ public:
 	void DoublyLinkedList::InsertNodeBefore(int node, int inValue);
 	int DoublyLinkedList::NodeCount();
 
-private:
-	// probably want a head pointer
-
 	Node* firstNode;
 	// Node* nextNode;
 	Node* lastNode;
+private:
+	// probably want a head pointer
+
+
 	int listLength;
 };

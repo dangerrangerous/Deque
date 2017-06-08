@@ -131,7 +131,11 @@ bool DoublyLinkedList::IsEmpty()
 void DoublyLinkedList::DeleteFirst()
 {
 	Node* temp = firstNode;
-	
+	if (firstNode == nullptr)
+	{
+		cout << "List is empty." << endl;
+		return;
+	}
 	if (firstNode->next == nullptr)
 	{
 		// I read online (stackoverflow) that you're supposed to delete then
@@ -158,7 +162,11 @@ void DoublyLinkedList::DeleteFirst()
 void DoublyLinkedList::DeleteLast()
 {
 	Node* temp = lastNode;
-
+	if (firstNode == nullptr)
+	{
+		cout << "List is empty." << endl;
+		return;
+	}
 	if (lastNode->previous == nullptr)
 	{
 		firstNode = nullptr;

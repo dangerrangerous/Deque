@@ -98,7 +98,15 @@ void Menu::ProcessCommand(Deque& deque)
 
 		case DequeueFront:
 			cout << "Dequeue'ing the front." << endl;
-			cout << deque.DequeueFront()->data;
+			if (deque.b_IsEmpty() == false)
+			{
+				cout << deque.DequeueFront()->data;
+			}
+			else
+			{
+				deque.DequeueFront();
+				cout << "The deque is empty." << endl;
+			}
 			cout << endl;
 			break;
 
@@ -111,7 +119,15 @@ void Menu::ProcessCommand(Deque& deque)
 
 		case DequeueBack:
 			cout << "Dequeue'ing the back." << endl;
-			cout << deque.DequeueBack()->data;
+			if (deque.b_IsEmpty() == false)
+			{
+				cout << deque.DequeueBack()->data;
+			}
+			else
+			{
+				deque.DequeueBack();
+				cout << "The deque is empty." << endl;
+			}
 			cout << endl;
 			break;
 
