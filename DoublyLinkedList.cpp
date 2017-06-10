@@ -77,19 +77,18 @@ void DoublyLinkedList::InitializeList()
 	DestroyList();
 } // end InitializeList
 
-void DoublyLinkedList::InsertFirst(int inValue)
+void DoublyLinkedList::InsertFirst(int inKey)
 {
-	Node* newNode = new Node(inValue);
-	
-	if (firstNode != nullptr)
-	{
-		firstNode->previous = newNode;
-		newNode->next = firstNode;
-		firstNode = newNode;
-	}
+	Node* newNode = new Node(inKey);
 
 	if (firstNode == nullptr)
 	{
+		firstNode = newNode;
+	}
+	else if (firstNode != nullptr)
+	{
+		firstNode->previous = newNode;
+		newNode->next = firstNode;
 		firstNode = newNode;
 	}
 
@@ -101,9 +100,9 @@ void DoublyLinkedList::InsertFirst(int inValue)
 	listLength++;
 } // end InsertFirst()
 
-void DoublyLinkedList::InsertLast(int inValue)
+void DoublyLinkedList::InsertLast(int inKey)
 {
-	Node* newNode = new Node(inValue);
+	Node* newNode = new Node(inKey);
 
 	if (lastNode == nullptr)
 	{
