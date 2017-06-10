@@ -5,9 +5,25 @@
 
 using namespace std;
 
+// class DoublyLinkedList;
+
 struct Node
 {
+	friend class DoublyLinkedList;
 
+public:
+	// Constructors
+	Node(void);
+	Node(int);
+	// Node(int, Node*);
+
+	// Destructor
+	~Node(void);
+	int data;
+
+private:
+	Node* previous;
+	Node* next;
 };
 
 class DoublyLinkedList
@@ -18,7 +34,30 @@ public:
 
 	void DoublyLinkedList::DestroyList();
 	Node* GetFirst();
-	void 
+	Node* GetLast();
+	void DoublyLinkedList::InitializeList();
+	
+	void DoublyLinkedList::InsertFirst(int);
+	void DoublyLinkedList::InsertLast(int);
+	bool DoublyLinkedList::IsEmpty();
+	
+	void DoublyLinkedList::DeleteFirst();
+	void DoublyLinkedList::DeleteLast();
+	void DoublyLinkedList::DeleteNode(int);
 
+	void DoublyLinkedList::Display();
+	Node* DoublyLinkedList::Find(int);
+
+	void DoublyLinkedList::InsertNodeAfter(int node, int inValue);
+	void DoublyLinkedList::InsertNodeBefore(int node, int inValue);
+	int DoublyLinkedList::NodeCount();
+
+	Node* firstNode;
+	// Node* nextNode;
+	Node* lastNode;
 private:
+	// probably want a head pointer
+
+
+	int listLength;
 };
