@@ -98,6 +98,8 @@ void Menu::ProcessCommand(Deque& deque)
 
 		case DequeueFront:
 			cout << "Dequeue'ing the front." << endl;
+			// this check is redundant but after having this fail when running in front of 'client'
+			// I'd rather be safe than sorry.
 			if (deque.b_IsEmpty() == false)
 			{
 				cout << deque.DequeueFront()->data;
@@ -133,18 +135,34 @@ void Menu::ProcessCommand(Deque& deque)
 
 		case PeekFront:
 			cout << "Peeking front." << endl;
-			cout << deque.PeekFront()->data;
+			// another quick fix, safety checks should be
+			// built into the deque functions, not the menu.
+			if (deque.b_IsEmpty() == false)
+			{
+				cout << deque.PeekFront()->data;
+			}
+			else
+			{
+				cout << "the deque is empty.";
+			}
 			cout << endl;
 			break;
 
 		case PeekBack:
 			cout << "Peeking back." << endl;
-			cout << deque.PeekBack()->data;
+			if (deque.b_IsEmpty() == false)
+			{
+				cout << deque.PeekBack()->data;
+			}
+			else
+			{
+				cout << "the deque is empty.";
+			}
 			cout << endl;
 			break;
 
 		case Print:
-			cout << "Printing the dequeue." << endl;
+			cout << "Printing the deque." << endl;
 			deque.Print();
 			cout << endl;
 			break;

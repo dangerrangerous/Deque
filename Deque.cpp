@@ -75,12 +75,28 @@ Node* Deque::DequeueBack()
 
 Node* Deque::PeekFront()
 {
-	return dequeElements.GetFirst();
+	Node* temp = dequeElements.GetFirst();
+	if (dequeElements.IsEmpty() == false)
+	{
+		return dequeElements.GetFirst();
+	}
+	else
+	{
+		return nullptr;
+	}
 }
 
 Node* Deque::PeekBack()
 {
-	return dequeElements.GetLast();
+	Node* temp = dequeElements.GetLast();
+	if (dequeElements.IsEmpty() == false)
+	{
+		return dequeElements.GetLast();
+	}
+	else
+	{
+		return nullptr;
+	}
 }
 
 void Deque::Print()
